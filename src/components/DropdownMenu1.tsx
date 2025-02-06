@@ -17,7 +17,7 @@ const DropdownMenu1: FunctionComponent<DropdownMenu1Type> = ({
         <div className="h-px w-[222px] absolute !m-[0] bottom-[141px] left-[calc(50%_-_111px)] bg-border z-[2]" />
         <div className="h-px w-[222px] absolute !m-[0] bottom-[36px] left-[calc(50%_-_111px)] bg-border z-[3]" />
         <div className="h-[420px] w-[214px] flex flex-col items-start justify-start gap-[9px] z-[4]">
-          <div className="w-[214px] h-8 flex flex-row items-start justify-start py-1.5 px-2 box-border text-[13.9px]">
+          <div className="w-[214px] h-8 flex flex-row items-start justify-start py-1.5 px-2 box-border text-sm-9">
             <a className="[text-decoration:none] h-5 w-[82px] relative leading-[20px] font-semibold text-[inherit] flex items-center shrink-0">
               My Account
             </a>
@@ -101,7 +101,7 @@ const DropdownMenu1: FunctionComponent<DropdownMenu1Type> = ({
             </div>
           </div>
           <div className="w-[214px] h-24 flex flex-col items-start justify-start">
-            <div className="w-[214px] h-8 rounded flex flex-row items-start justify-start py-1.5 px-2 box-border z-[2] text-[13.7px]">
+            <div className="w-[214px] h-8 rounded flex flex-row items-start justify-start py-1.5 px-2 box-border z-[2] text-sm-7">
               <div className="h-[18px] w-6 flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
                 <div className="w-6 h-4 flex flex-row items-start justify-start">
                   <div className="w-4 h-4 overflow-hidden shrink-0 flex flex-col items-start justify-center">
@@ -187,7 +187,7 @@ const DropdownMenu1: FunctionComponent<DropdownMenu1Type> = ({
                 </div>
               </div>
             </div>
-            <div className="w-[214px] h-8 rounded flex flex-row items-start justify-start py-1.5 px-2 box-border text-[13.8px]">
+            <div className="w-[214px] h-8 rounded flex flex-row items-start justify-start py-1.5 px-2 box-border text-sm-8">
               <div className="h-[18px] w-6 flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
                 <div className="w-6 h-4 flex flex-row items-start justify-start">
                   <div className="w-4 h-4 overflow-hidden shrink-0 flex flex-col items-start justify-center">

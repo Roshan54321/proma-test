@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 import { Box } from "@mui/material";
-import FrameComponent from "./FrameComponent";
+import FrameComponent from "./FrameComponent1";
 import Skeleton1 from "./Skeleton1";
 
 export type SkeletonType = {
