@@ -1,0 +1,105 @@
+.button {
+  position: relative;
+  line-height: 20px;
+  font-weight: 500;
+}
+.root {
+  width: 77px;
+  border-radius: var(--br-7xs);
+  background-color: var(--primary);
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-3xs-5) var(--padding-base) var(--padding-2xs-5);
+  box-sizing: border-box;
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--primary-foreground);
+  font-family: var(--font-inter);
+}
+.root[data-size="default"][data-variant="destructive"] {
+  background-color: var(--destructive);
+}
+.root[data-size="sm"][data-variant="destructive"] {
+  background-color: var(--destructive);
+}
+.root[data-size="lg"][data-variant="destructive"] {
+  background-color: var(--destructive);
+}
+.root[data-size="default"][data-variant="ghost"] {
+  background-color: unset;
+}
+.root[data-size="sm"][data-variant="ghost"] {
+  background-color: unset;
+}
+.root[data-size="lg"][data-variant="ghost"] {
+  background-color: unset;
+}
+.root[data-size="default"][data-variant="link"] {
+  background-color: unset;
+}
+.root[data-size="sm"][data-variant="link"] {
+  background-color: unset;
+}
+.root[data-size="lg"][data-variant="link"] {
+  background-color: unset;
+}
+.root[data-size="default"][data-variant="outline"] {
+  background-color: unset;
+  border: 1px solid var(--border);
+}
+.root[data-size="sm"][data-variant="secondary"] {
+  background-color: var(--muted);
+}
+.root[data-size="lg"][data-variant="secondary"] {
+  background-color: var(--muted);
+}
+.root[data-size="sm"][data-variant="outline"] {
+  background-color: unset;
+  border: 1px solid var(--border);
+}
+.root[data-size="lg"][data-variant="outline"] {
+  background-color: unset;
+  border: 1px solid var(--border);
+}
+.root[data-size="default"][data-variant="secondary"] {
+  background-color: var(--muted);
+}
+.root[data-size="default"][data-variant="ghost"] .button {
+  color: var(--foreground);
+}
+.root[data-size="sm"][data-variant="ghost"] .button {
+  color: var(--foreground);
+}
+.root[data-size="lg"][data-variant="ghost"] .button {
+  color: var(--foreground);
+}
+.root[data-size="default"][data-variant="link"] .button {
+  color: var(--foreground);
+}
+.root[data-size="sm"][data-variant="link"] .button {
+  color: var(--foreground);
+}
+.root[data-size="lg"][data-variant="link"] .button {
+  color: var(--foreground);
+}
+.root[data-size="default"][data-variant="outline"] .button {
+  color: var(--foreground);
+}
+.root[data-size="sm"][data-variant="secondary"] .button {
+  color: var(--foreground);
+}
+.root[data-size="lg"][data-variant="secondary"] .button {
+  color: var(--foreground);
+}
+.root[data-size="sm"][data-variant="outline"] .button {
+  color: var(--foreground);
+}
+.root[data-size="lg"][data-variant="outline"] .button {
+  color: var(--foreground);
+}
+.root[data-size="default"][data-variant="secondary"] .button {
+  color: var(--foreground);
+}
