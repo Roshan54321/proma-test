@@ -1,6 +1,5 @@
 import { FunctionComponent } from "react";
 import { Box } from "@mui/material";
-import FrameComponent1 from "./FrameComponent1";
 import NavigationMenu1 from "./NavigationMenu1";
 
 export type NavigationMenuType = {
@@ -12,15 +11,33 @@ const NavigationMenu: FunctionComponent<NavigationMenuType> = ({
 }) => {
   return (
     <div
-      className={`w-[792px] bg-background max-w-full flex flex-col items-start justify-start pt-8 px-8 pb-[357px] box-border gap-8 leading-[normal] tracking-[normal] mq450:gap-4 ${className}`}
+      className={`bg-background max-w-full h-[633px] flex flex-col items-center justify-start pt-8 px-8 pb-16 box-border gap-16 text-left text-11xl text-foreground font-inter ${className}`}
     >
-      <FrameComponent1 />
-      <section className="self-stretch flex flex-col items-start justify-start gap-16 mq450:gap-4 mq750:gap-8">
-        <div className="self-stretch h-px relative border-border border-t-[1px] border-solid box-border" />
-        <div className="self-stretch flex flex-row items-start justify-center py-0 pl-5 pr-[21px]">
-          <NavigationMenu1 />
+      <div className="flex flex-col items-center justify-start gap-8">
+        <div className="flex flex-row items-start justify-start gap-[45px]">
+          <div className="flex flex-col items-start justify-start gap-4">
+            <div className="relative tracking-[-0.01em] leading-[36px] font-semibold">
+              Navigation Menu
+            </div>
+            <div className="w-[584px] relative text-xl leading-[28px] text-muted-foreground inline-block">
+              <p className="m-0">
+                A collection of links for navigating websites.
+              </p>
+            </div>
+          </div>
+          <div className="w-24 rounded-md bg-foreground flex flex-row items-center justify-center py-2 px-4 box-border text-sm text-background">
+            <a
+              className="relative [text-decoration:underline] leading-[24px] font-medium text-[inherit]"
+              href="https://ui.shadcn.com/docs/components/navigation-menu"
+              target="_blank"
+            >
+              View docs
+            </a>
+          </div>
         </div>
-      </section>
+        <div className="w-[729px] relative border-border border-t-[1px] border-solid box-border h-px" />
+      </div>
+      <NavigationMenu1 />
     </div>
   );
 };
