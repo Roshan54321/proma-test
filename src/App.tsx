@@ -5,7 +5,7 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
-import Calendar1 from "./components/Calendar1";
+import Badge1 from "./components/Badge1";
 
 function App() {
   const action = useNavigationType();
@@ -45,7 +45,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Calendar1 />} />
+      <Route path="/" element={<Badge1 />} />
     </Routes>
   );
 }

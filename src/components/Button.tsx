@@ -1,7 +1,6 @@
 import { FunctionComponent, useCallback } from "react";
 import { Typography, Box } from "@mui/material";
 import Button1 from "./Button1";
-import styles from "./Button.module.css";
 
 export type ButtonType = {
   className?: string;
@@ -40,36 +39,12 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
       const originalDisplay = "flex";
       const siblingDisplay = "flex";
 
-      const openStyleObject = {
-        "grid-template-rows": "1fr",
-      };
-      const closeStyleObject = {
-        "padding-top": "0px",
-        "padding-bottom": "0px",
-        "margin-bottom": "0px",
-        "margin-top": "0px",
-        "grid-template-rows": "0fr",
-      };
-
-      function applyStyles(
-        element: HTMLElement,
-        styleObject: Record<string, string>
-      ) {
-        Object.assign(element.style, styleObject);
-      }
-
-      function removeStyles(
-        element: HTMLElement,
-        styleObject: Record<string, string>
-      ) {
-        Object.keys(styleObject).forEach((key) => {
-          element?.style.removeProperty(key);
-        });
-      }
+      const openClasses = ["grid-rows-[1fr]"];
+      const closeClasses = ["pt-0", "pb-0", "mb-0", "mt-0", "grid-rows-[0fr]"];
 
       if (isOpen) {
-        removeStyles(accContent, openStyleObject);
-        applyStyles(accContent, closeStyleObject);
+        accContent?.classList.remove(...openClasses);
+        accContent?.classList.add(...closeClasses);
 
         setTimeout(() => {
           if (accItem) {
@@ -86,8 +61,8 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
           "[data-acc-content]"
         ) as HTMLElement;
         setTimeout(() => {
-          removeStyles(siblingAccContent, closeStyleObject);
-          applyStyles(siblingAccContent, openStyleObject);
+          siblingAccContent?.classList.remove(...closeClasses);
+          siblingAccContent?.classList.add(...openClasses);
         }, 1);
       }
     },
@@ -95,36 +70,45 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
   );
 
   return (
-    <div className={[styles.button, className].join(" ")}>
-      <header className={styles.frameParent}>
-        <div className={styles.frameWrapper}>
-          <div className={styles.frameGroup}>
-            <div className={styles.buttonParent}>
-              <a className={styles.button1}>Button</a>
-              <h3 className={styles.displaysAButton}>
+    <div
+      className={`w-[792px] bg-background max-w-full flex flex-col items-start justify-start pt-8 px-8 pb-16 box-border gap-[63px] leading-[normal] tracking-[normal] mq450:gap-[31px] ${className}`}
+    >
+      <header className="self-stretch flex flex-col items-start justify-start pt-0 px-0 pb-px box-border gap-8 max-w-full text-left text-11xl text-foreground font-inter mq725:gap-4">
+        <div className="self-stretch flex flex-row items-start justify-start py-0 px-px box-border max-w-full shrink-0">
+          <div className="flex-1 flex flex-row items-start justify-start gap-[45px] max-w-full mq725:gap-[22px]">
+            <div className="flex-1 flex flex-col items-start justify-start gap-4 max-w-full">
+              <a className="[text-decoration:none] relative tracking-[-0.01em] leading-[36px] font-semibold text-[inherit] inline-block min-w-[97px]">
+                Button
+              </a>
+              <h3 className="m-0 self-stretch relative text-xl leading-[28px] font-normal font-[inherit] text-muted-foreground">
                 Displays a button or a component that looks like a button.
               </h3>
             </div>
-            <button className={styles.button2}>
-              <a className={styles.viewDocs}>View docs</a>
+            <button className="cursor-pointer [border:none] py-2 pl-[13px] pr-3 bg-foreground rounded-md flex flex-row items-start justify-start hover:bg-darkslategray">
+              <a className="[text-decoration:underline] relative text-sm leading-[24px] font-medium font-inter text-background text-left inline-block min-w-[71px]">
+                View docs
+              </a>
             </button>
           </div>
         </div>
-        <div className={styles.divider} />
+        <div className="self-stretch h-px relative border-border border-t-[1px] border-solid box-border" />
       </header>
-      <section className={styles.componentGridWrapper}>
-        <div className={styles.componentGrid} data-acc-group>
+      <section className="self-stretch flex flex-row items-start justify-center max-w-full text-[transparent]">
+        <div
+          className="self-stretch w-[366px] flex flex-col items-start justify-start gap-5 max-w-full"
+          data-acc-group
+        >
           <div
-            className={styles.frameContainer}
+            className="w-[357px] h-11 flex flex-row items-start justify-start gap-5 [transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] cursor-pointer"
             data-acc-item
             data-acc-header
             data-acc-original
             onClick={onAccordionHeaderClick}
           >
-            <div className={styles.buttonWrapper}>
+            <div className="h-[42px] w-[77px] flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
               <Button1 size="default" variant="default" />
             </div>
-            <div className={styles.buttonContainer}>
+            <div className="h-10 w-[69px] flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border">
               <Button1
                 size="sm"
                 variant="default"
@@ -138,10 +122,10 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
               buttonWidth="111px"
               buttonHeight="44px"
             />
-            <div className={styles.buttonFrame}>
-              <div className={styles.button3}>
+            <div className="h-[42px] w-10 flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
+              <div className="w-10 rounded-md bg-primary h-10 flex flex-row items-center justify-center p-3 box-border">
                 <img
-                  className={styles.svgIcon}
+                  className="h-4 w-4 relative"
                   loading="lazy"
                   alt=""
                   src="/svg1.svg"
@@ -149,13 +133,17 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
               </div>
             </div>
           </div>
-          <div className={styles.accordionItemMock} data-acc-item data-acc-open>
+          <div
+            className="w-[357px] hidden flex-col"
+            data-acc-item
+            data-acc-open
+          >
             <div
-              className={styles.frame5Open}
+              className="w-[357px] h-11 flex flex-row items-start justify-start gap-5 cursor-pointer"
               data-acc-header
               onClick={onAccordionHeaderClick}
             >
-              <div className={styles.buttonWrapper}>
+              <div className="h-[42px] w-[77px] flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
                 <Button1
                   size="default"
                   variant="default"
@@ -163,7 +151,7 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
                   buttonHeight="40px"
                 />
               </div>
-              <div className={styles.buttonContainer}>
+              <div className="h-10 w-[69px] flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border">
                 <Button1
                   size="sm"
                   variant="default"
@@ -177,20 +165,23 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
                 buttonWidth="111px"
                 buttonHeight="44px"
               />
-              <div className={styles.buttonFrame}>
-                <div className={styles.button3}>
+              <div className="h-[42px] w-10 flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
+                <div className="w-10 rounded-md bg-primary h-10 flex flex-row items-center justify-center p-3 box-border">
                   <img
-                    className={styles.svgIcon}
+                    className="h-4 w-4 relative"
                     loading="lazy"
                     alt=""
                     src="/svg1.svg"
                   />
                 </div>
               </div>
-              <div className={styles.accordionContent} />
+              <div className="relative hidden" />
             </div>
-            <div className={styles.accordionContent1} data-acc-content>
-              <div className={styles.accordionContentWrap}>
+            <div
+              className="w-[357px] grid flex-row items-start justify-start gap-5 cursor-default grid-rows-[0fr] [transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] accordion__open:grid-rows-[1fr] accordion__close:grid-rows-[0fr]"
+              data-acc-content
+            >
+              <div className="[transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] overflow-hidden">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
                 eget.
@@ -198,13 +189,13 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
             </div>
           </div>
           <div
-            className={styles.frameContainer}
+            className="w-[357px] h-11 flex flex-row items-start justify-start gap-5 [transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] cursor-pointer"
             data-acc-item
             data-acc-header
             data-acc-original
             onClick={onAccordionHeaderClick}
           >
-            <div className={styles.buttonWrapper}>
+            <div className="h-[42px] w-[77px] flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
               <Button1
                 size="default"
                 variant="destructive"
@@ -212,7 +203,7 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
                 buttonHeight="40px"
               />
             </div>
-            <div className={styles.buttonContainer}>
+            <div className="h-10 w-[69px] flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border">
               <Button1
                 size="sm"
                 variant="destructive"
@@ -226,10 +217,10 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
               buttonWidth="111px"
               buttonHeight="44px"
             />
-            <div className={styles.buttonFrame}>
-              <div className={styles.button5}>
+            <div className="h-[42px] w-10 flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
+              <div className="w-10 rounded-md bg-destructive h-10 flex flex-row items-center justify-center p-3 box-border">
                 <img
-                  className={styles.svgIcon}
+                  className="h-4 w-4 relative"
                   loading="lazy"
                   alt=""
                   src="/svg1.svg"
@@ -237,13 +228,17 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
               </div>
             </div>
           </div>
-          <div className={styles.accordionItemMock} data-acc-item data-acc-open>
+          <div
+            className="w-[357px] hidden flex-col"
+            data-acc-item
+            data-acc-open
+          >
             <div
-              className={styles.frame5Open}
+              className="w-[357px] h-11 flex flex-row items-start justify-start gap-5 cursor-pointer"
               data-acc-header
               onClick={onAccordionHeaderClick}
             >
-              <div className={styles.buttonWrapper}>
+              <div className="h-[42px] w-[77px] flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
                 <Button1
                   size="default"
                   variant="default"
@@ -251,7 +246,7 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
                   buttonHeight="40px"
                 />
               </div>
-              <div className={styles.buttonContainer}>
+              <div className="h-10 w-[69px] flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border">
                 <Button1
                   size="sm"
                   variant="default"
@@ -265,20 +260,23 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
                 buttonWidth="111px"
                 buttonHeight="44px"
               />
-              <div className={styles.buttonFrame}>
-                <div className={styles.button3}>
+              <div className="h-[42px] w-10 flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
+                <div className="w-10 rounded-md bg-primary h-10 flex flex-row items-center justify-center p-3 box-border">
                   <img
-                    className={styles.svgIcon}
+                    className="h-4 w-4 relative"
                     loading="lazy"
                     alt=""
                     src="/svg1.svg"
                   />
                 </div>
               </div>
-              <div className={styles.accordionContent} />
+              <div className="relative hidden" />
             </div>
-            <div className={styles.accordionContent1} data-acc-content>
-              <div className={styles.accordionContentWrap}>
+            <div
+              className="w-[357px] grid flex-row items-start justify-start gap-5 cursor-default grid-rows-[0fr] [transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] accordion__open:grid-rows-[1fr] accordion__close:grid-rows-[0fr]"
+              data-acc-content
+            >
+              <div className="[transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] overflow-hidden">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
                 eget.
@@ -286,13 +284,13 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
             </div>
           </div>
           <div
-            className={styles.frameContainer}
+            className="w-[357px] h-11 flex flex-row items-start justify-start gap-5 [transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] cursor-pointer"
             data-acc-item
             data-acc-header
             data-acc-original
             onClick={onAccordionHeaderClick}
           >
-            <div className={styles.buttonWrapper}>
+            <div className="h-[42px] w-[77px] flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
               <Button1
                 size="default"
                 variant="ghost"
@@ -300,7 +298,7 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
                 buttonHeight="40px"
               />
             </div>
-            <div className={styles.buttonContainer}>
+            <div className="h-10 w-[69px] flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border">
               <Button1
                 size="sm"
                 variant="ghost"
@@ -314,10 +312,10 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
               buttonWidth="111px"
               buttonHeight="44px"
             />
-            <div className={styles.buttonFrame}>
-              <div className={styles.button7}>
+            <div className="h-[42px] w-10 flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
+              <div className="w-10 rounded-md h-10 flex flex-row items-center justify-center p-3 box-border">
                 <img
-                  className={styles.svgIcon}
+                  className="h-4 w-4 relative"
                   loading="lazy"
                   alt=""
                   src="/svg-2.svg"
@@ -325,13 +323,17 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
               </div>
             </div>
           </div>
-          <div className={styles.accordionItemMock} data-acc-item data-acc-open>
+          <div
+            className="w-[357px] hidden flex-col"
+            data-acc-item
+            data-acc-open
+          >
             <div
-              className={styles.frame5Open}
+              className="w-[357px] h-11 flex flex-row items-start justify-start gap-5 cursor-pointer"
               data-acc-header
               onClick={onAccordionHeaderClick}
             >
-              <div className={styles.buttonWrapper}>
+              <div className="h-[42px] w-[77px] flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
                 <Button1
                   size="default"
                   variant="default"
@@ -339,7 +341,7 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
                   buttonHeight="40px"
                 />
               </div>
-              <div className={styles.buttonContainer}>
+              <div className="h-10 w-[69px] flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border">
                 <Button1
                   size="sm"
                   variant="default"
@@ -353,20 +355,23 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
                 buttonWidth="111px"
                 buttonHeight="44px"
               />
-              <div className={styles.buttonFrame}>
-                <div className={styles.button3}>
+              <div className="h-[42px] w-10 flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
+                <div className="w-10 rounded-md bg-primary h-10 flex flex-row items-center justify-center p-3 box-border">
                   <img
-                    className={styles.svgIcon}
+                    className="h-4 w-4 relative"
                     loading="lazy"
                     alt=""
                     src="/svg1.svg"
                   />
                 </div>
               </div>
-              <div className={styles.accordionContent} />
+              <div className="relative hidden" />
             </div>
-            <div className={styles.accordionContent1} data-acc-content>
-              <div className={styles.accordionContentWrap}>
+            <div
+              className="w-[357px] grid flex-row items-start justify-start gap-5 cursor-default grid-rows-[0fr] [transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] accordion__open:grid-rows-[1fr] accordion__close:grid-rows-[0fr]"
+              data-acc-content
+            >
+              <div className="[transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] overflow-hidden">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
                 eget.
@@ -374,13 +379,13 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
             </div>
           </div>
           <div
-            className={styles.frameContainer}
+            className="w-[357px] h-11 flex flex-row items-start justify-start gap-5 [transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] cursor-pointer"
             data-acc-item
             data-acc-header
             data-acc-original
             onClick={onAccordionHeaderClick}
           >
-            <div className={styles.buttonWrapper}>
+            <div className="h-[42px] w-[77px] flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
               <Button1
                 size="default"
                 variant="link"
@@ -388,7 +393,7 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
                 buttonHeight="40px"
               />
             </div>
-            <div className={styles.buttonContainer}>
+            <div className="h-10 w-[69px] flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border">
               <Button1
                 size="sm"
                 variant="link"
@@ -402,10 +407,10 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
               buttonWidth="111px"
               buttonHeight="44px"
             />
-            <div className={styles.buttonFrame}>
-              <div className={styles.button7}>
+            <div className="h-[42px] w-10 flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
+              <div className="w-10 rounded-md h-10 flex flex-row items-center justify-center p-3 box-border">
                 <img
-                  className={styles.svgIcon}
+                  className="h-4 w-4 relative"
                   loading="lazy"
                   alt=""
                   src="/svg-2.svg"
@@ -413,13 +418,17 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
               </div>
             </div>
           </div>
-          <div className={styles.accordionItemMock} data-acc-item data-acc-open>
+          <div
+            className="w-[357px] hidden flex-col"
+            data-acc-item
+            data-acc-open
+          >
             <div
-              className={styles.frame5Open}
+              className="w-[357px] h-11 flex flex-row items-start justify-start gap-5 cursor-pointer"
               data-acc-header
               onClick={onAccordionHeaderClick}
             >
-              <div className={styles.buttonWrapper}>
+              <div className="h-[42px] w-[77px] flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
                 <Button1
                   size="default"
                   variant="default"
@@ -427,7 +436,7 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
                   buttonHeight="40px"
                 />
               </div>
-              <div className={styles.buttonContainer}>
+              <div className="h-10 w-[69px] flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border">
                 <Button1
                   size="sm"
                   variant="default"
@@ -441,20 +450,23 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
                 buttonWidth="111px"
                 buttonHeight="44px"
               />
-              <div className={styles.buttonFrame}>
-                <div className={styles.button3}>
+              <div className="h-[42px] w-10 flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
+                <div className="w-10 rounded-md bg-primary h-10 flex flex-row items-center justify-center p-3 box-border">
                   <img
-                    className={styles.svgIcon}
+                    className="h-4 w-4 relative"
                     loading="lazy"
                     alt=""
                     src="/svg1.svg"
                   />
                 </div>
               </div>
-              <div className={styles.accordionContent} />
+              <div className="relative hidden" />
             </div>
-            <div className={styles.accordionContent1} data-acc-content>
-              <div className={styles.accordionContentWrap}>
+            <div
+              className="w-[357px] grid flex-row items-start justify-start gap-5 cursor-default grid-rows-[0fr] [transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] accordion__open:grid-rows-[1fr] accordion__close:grid-rows-[0fr]"
+              data-acc-content
+            >
+              <div className="[transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] overflow-hidden">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
                 eget.
@@ -462,13 +474,13 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
             </div>
           </div>
           <div
-            className={styles.frameParent4}
+            className="w-[361px] h-11 flex flex-row items-start justify-start gap-5 [transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] cursor-pointer"
             data-acc-item
             data-acc-header
             data-acc-original
             onClick={onAccordionHeaderClick}
           >
-            <div className={styles.buttonWrapper21}>
+            <div className="h-[42px] w-[79px] flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
               <Button1
                 size="default"
                 variant="outline"
@@ -476,7 +488,7 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
                 buttonHeight="40px"
               />
             </div>
-            <div className={styles.buttonWrapper22}>
+            <div className="h-10 w-[71px] flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border">
               <Button1
                 size="sm"
                 variant="outline"
@@ -490,10 +502,10 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
               buttonWidth="111px"
               buttonHeight="44px"
             />
-            <div className={styles.buttonFrame}>
-              <div className={styles.button11}>
+            <div className="h-[42px] w-10 flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
+              <div className="w-10 rounded-md border-border border-[1px] border-solid box-border h-10 flex flex-row items-center justify-center p-3">
                 <img
-                  className={styles.svgIcon}
+                  className="h-4 w-4 relative"
                   loading="lazy"
                   alt=""
                   src="/svg-2.svg"
@@ -501,13 +513,17 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
               </div>
             </div>
           </div>
-          <div className={styles.accordionItemMock} data-acc-item data-acc-open>
+          <div
+            className="w-[357px] hidden flex-col"
+            data-acc-item
+            data-acc-open
+          >
             <div
-              className={styles.frame5Open}
+              className="w-[357px] h-11 flex flex-row items-start justify-start gap-5 cursor-pointer"
               data-acc-header
               onClick={onAccordionHeaderClick}
             >
-              <div className={styles.buttonWrapper}>
+              <div className="h-[42px] w-[77px] flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
                 <Button1
                   size="default"
                   variant="default"
@@ -515,7 +531,7 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
                   buttonHeight="40px"
                 />
               </div>
-              <div className={styles.buttonContainer}>
+              <div className="h-10 w-[69px] flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border">
                 <Button1
                   size="sm"
                   variant="default"
@@ -529,20 +545,23 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
                 buttonWidth="111px"
                 buttonHeight="44px"
               />
-              <div className={styles.buttonFrame}>
-                <div className={styles.button3}>
+              <div className="h-[42px] w-10 flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
+                <div className="w-10 rounded-md bg-primary h-10 flex flex-row items-center justify-center p-3 box-border">
                   <img
-                    className={styles.svgIcon}
+                    className="h-4 w-4 relative"
                     loading="lazy"
                     alt=""
                     src="/svg1.svg"
                   />
                 </div>
               </div>
-              <div className={styles.accordionContent} />
+              <div className="relative hidden" />
             </div>
-            <div className={styles.accordionContent1} data-acc-content>
-              <div className={styles.accordionContentWrap}>
+            <div
+              className="w-[357px] grid flex-row items-start justify-start gap-5 cursor-default grid-rows-[0fr] [transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] accordion__open:grid-rows-[1fr] accordion__close:grid-rows-[0fr]"
+              data-acc-content
+            >
+              <div className="[transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] overflow-hidden">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
                 eget.
@@ -550,13 +569,13 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
             </div>
           </div>
           <div
-            className={styles.frameContainer}
+            className="w-[357px] h-11 flex flex-row items-start justify-start gap-5 [transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] cursor-pointer"
             data-acc-item
             data-acc-header
             data-acc-original
             onClick={onAccordionHeaderClick}
           >
-            <div className={styles.buttonWrapper}>
+            <div className="h-[42px] w-[77px] flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
               <Button1
                 size="default"
                 variant="secondary"
@@ -564,7 +583,7 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
                 buttonHeight="40px"
               />
             </div>
-            <div className={styles.buttonContainer}>
+            <div className="h-10 w-[69px] flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border">
               <Button1
                 size="sm"
                 variant="secondary"
@@ -578,10 +597,10 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
               buttonWidth="111px"
               buttonHeight="44px"
             />
-            <div className={styles.buttonFrame}>
-              <div className={styles.button13}>
+            <div className="h-[42px] w-10 flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
+              <div className="w-10 rounded-md bg-muted h-10 flex flex-row items-center justify-center p-3 box-border">
                 <img
-                  className={styles.svgIcon}
+                  className="h-4 w-4 relative"
                   loading="lazy"
                   alt=""
                   src="/svg-2.svg"
@@ -589,13 +608,17 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
               </div>
             </div>
           </div>
-          <div className={styles.accordionItemMock} data-acc-item data-acc-open>
+          <div
+            className="w-[357px] hidden flex-col"
+            data-acc-item
+            data-acc-open
+          >
             <div
-              className={styles.frame5Open}
+              className="w-[357px] h-11 flex flex-row items-start justify-start gap-5 cursor-pointer"
               data-acc-header
               onClick={onAccordionHeaderClick}
             >
-              <div className={styles.buttonWrapper}>
+              <div className="h-[42px] w-[77px] flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
                 <Button1
                   size="default"
                   variant="default"
@@ -603,7 +626,7 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
                   buttonHeight="40px"
                 />
               </div>
-              <div className={styles.buttonContainer}>
+              <div className="h-10 w-[69px] flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border">
                 <Button1
                   size="sm"
                   variant="default"
@@ -617,20 +640,23 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
                 buttonWidth="111px"
                 buttonHeight="44px"
               />
-              <div className={styles.buttonFrame}>
-                <div className={styles.button3}>
+              <div className="h-[42px] w-10 flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
+                <div className="w-10 rounded-md bg-primary h-10 flex flex-row items-center justify-center p-3 box-border">
                   <img
-                    className={styles.svgIcon}
+                    className="h-4 w-4 relative"
                     loading="lazy"
                     alt=""
                     src="/svg1.svg"
                   />
                 </div>
               </div>
-              <div className={styles.accordionContent} />
+              <div className="relative hidden" />
             </div>
-            <div className={styles.accordionContent1} data-acc-content>
-              <div className={styles.accordionContentWrap}>
+            <div
+              className="w-[357px] grid flex-row items-start justify-start gap-5 cursor-default grid-rows-[0fr] [transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] accordion__open:grid-rows-[1fr] accordion__close:grid-rows-[0fr]"
+              data-acc-content
+            >
+              <div className="[transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] overflow-hidden">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
                 eget.
