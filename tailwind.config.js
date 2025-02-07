@@ -10,7 +10,9 @@ module.exports = {
         foreground: "#09090b",
         darkslategray: "#3d3d3d",
         "muted-foreground": "#71717a",
-        "secondary-foreground": "#18181b",
+        primary: "#18181b",
+        "primary-foreground": "#fafafa",
+        destructive: "#ef4343",
       },
       spacing: {},
       fontFamily: {
@@ -38,6 +40,9 @@ module.exports = {
     screens: {
       mq750: {
         raw: "screen and (max-width: 750px)",
+      },
+      mq725: {
+        raw: "screen and (max-width: 725px)",
       },
       mq675: {
         raw: "screen and (max-width: 675px)",

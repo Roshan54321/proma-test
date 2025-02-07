@@ -14,13 +14,14 @@ const NavigationMenu1: FunctionComponent<NavigationMenu1Type> = ({
     >
       <div className="flex flex-row items-center justify-center gap-1 z-[0]">
         <div className="w-[149.9px] relative rounded-md bg-background h-10">
-          <div className="absolute top-[9.5px] left-[16px] leading-[20px] font-medium flex items-center justify-center w-[102.3px] h-5">
+          <select className="absolute top-[9.5px] left-[16px] text-sm leading-[20px] font-medium font-inter text-foreground text-center flex items-center justify-center [border:none]">
             Getting started
-          </div>
+          </select>
           <div className="absolute top-[15px] left-[117.9px] w-4 h-3 flex flex-col items-start justify-start py-0 pl-1 pr-0 box-border">
             <div className="w-3 h-3 overflow-hidden shrink-0 flex flex-col items-center justify-center">
               <img
                 className="w-3 flex-1 relative max-h-full"
+                loading="lazy"
                 alt=""
                 src="/frame.svg"
               />
@@ -28,22 +29,23 @@ const NavigationMenu1: FunctionComponent<NavigationMenu1Type> = ({
           </div>
         </div>
         <div className="w-[133.7px] relative rounded-md bg-background h-10">
-          <div className="absolute top-[9.5px] left-[16px] leading-[20px] font-medium flex items-center justify-center w-[86px] h-5">
+          <a className="[text-decoration:none] absolute top-[9.5px] left-[16px] leading-[20px] font-medium text-[inherit] flex items-center justify-center">
             Components
-          </div>
+          </a>
           <img
             className="absolute top-[calc(50%_-_5px)] left-[calc(50%_+_38.85px)] w-3 h-3 object-contain"
+            loading="lazy"
             alt=""
             src="/svg.svg"
           />
         </div>
         <div className="rounded-md bg-background flex flex-row items-center justify-center pt-[9.5px] px-4 pb-[10.5px] text-left">
-          <div className="relative leading-[20px] font-medium">
+          <a className="[text-decoration:none] relative leading-[20px] font-medium text-[inherit]">
             Documentation
-          </div>
+          </a>
         </div>
       </div>
-      <div className="w-[600px] !m-[0] absolute top-[46px] left-[calc(50%_-_213.3px)] shadow-[0px_10px_15px_-3px_rgba(0,_0,_0,_0.1),_0px_4px_6px_-4px_rgba(0,_0,_0,_0.1)] rounded-md bg-background border-border border-[1px] border-solid box-border overflow-hidden shrink-0 flex flex-row items-start justify-start flex-wrap content-start p-4 gap-3 z-[1] text-left">
+      <div className="w-[600px] !m-[0] absolute top-[46px] left-[calc(50%_-_213.3px)] shadow-[0px_10px_15px_-3px_rgba(0,_0,_0,_0.1),_0px_4px_6px_-4px_rgba(0,_0,_0,_0.1)] rounded-md bg-background border-border border-[1px] border-solid box-border flex flex-row items-start justify-start flex-wrap content-start p-4 gap-3 z-[1] text-left">
         <div className="w-[278px] h-[80.5px] flex flex-col items-start justify-start">
           <div className="self-stretch rounded-md flex flex-col items-start justify-start p-3 gap-1">
             <div className="self-stretch flex flex-col items-start justify-start">

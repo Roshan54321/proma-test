@@ -34,7 +34,7 @@ const DropdownMenu1: FunctionComponent<DropdownMenu1Type> = ({
                   Profile
                 </div>
               </div>
-              <div className="h-4 w-[131px] flex flex-col items-end justify-start py-0 pl-[100px] pr-0 box-border min-w-[30.66px] text-[10.7px] text-secondary-foreground">
+              <div className="h-4 w-[131px] flex flex-col items-end justify-start py-0 pl-[100px] pr-0 box-border min-w-[30.66px] text-[10.7px] text-primary">
                 <div className="w-[31px] h-4 flex flex-col items-start justify-start opacity-[0.6]">
                   <div className="w-8 h-4 relative tracking-[1.2px] leading-[16px] flex items-center shrink-0">
                     ⇧⌘P
@@ -53,7 +53,7 @@ const DropdownMenu1: FunctionComponent<DropdownMenu1Type> = ({
                   Billing
                 </a>
               </div>
-              <div className="h-4 w-[134px] flex flex-col items-end justify-start py-0 pl-[113px] pr-0 box-border min-w-[20.23px] text-[11.6px] text-secondary-foreground">
+              <div className="h-4 w-[134px] flex flex-col items-end justify-start py-0 pl-[113px] pr-0 box-border min-w-[20.23px] text-[11.6px] text-primary">
                 <div className="w-[21px] h-4 flex flex-col items-start justify-start opacity-[0.6]">
                   <div className="w-[22px] h-4 relative tracking-[1.2px] leading-[16px] flex items-center shrink-0">
                     ⌘B
@@ -72,7 +72,7 @@ const DropdownMenu1: FunctionComponent<DropdownMenu1Type> = ({
                   Settings
                 </a>
               </div>
-              <div className="h-4 w-[121px] flex flex-col items-end justify-start py-0 pl-[101px] pr-0 box-border min-w-[19.86px] text-xs-4 text-secondary-foreground">
+              <div className="h-4 w-[121px] flex flex-col items-end justify-start py-0 pl-[101px] pr-0 box-border min-w-[19.86px] text-xs-4 text-primary">
                 <div className="w-5 h-4 flex flex-col items-start justify-start opacity-[0.6]">
                   <div className="w-[21px] h-4 relative tracking-[1.2px] leading-[16px] flex items-center shrink-0">
                     ⌘S
@@ -91,7 +91,7 @@ const DropdownMenu1: FunctionComponent<DropdownMenu1Type> = ({
                   Keyboard shortcuts
                 </div>
               </div>
-              <div className="h-4 w-12 flex flex-col items-end justify-start py-0 pl-[27px] pr-0 box-border min-w-[19.91px] text-xs-4 text-secondary-foreground">
+              <div className="h-4 w-12 flex flex-col items-end justify-start py-0 pl-[27px] pr-0 box-border min-w-[19.91px] text-xs-4 text-primary">
                 <div className="w-[21px] h-4 flex flex-col items-start justify-start opacity-[0.6]">
                   <div className="w-[22px] h-4 relative tracking-[1.2px] leading-[16px] flex items-center shrink-0">
                     ⌘K
@@ -159,7 +159,7 @@ const DropdownMenu1: FunctionComponent<DropdownMenu1Type> = ({
                   New Team
                 </div>
               </div>
-              <div className="h-4 w-[106px] flex flex-col items-end justify-start py-0 pl-[78px] pr-0 box-border min-w-[27.05px] text-[11.1px] text-secondary-foreground">
+              <div className="h-4 w-[106px] flex flex-col items-end justify-start py-0 pl-[78px] pr-0 box-border min-w-[27.05px] text-[11.1px] text-primary">
                 <div className="w-7 h-4 flex flex-col items-start justify-start opacity-[0.6]">
                   <div className="w-[29px] h-4 relative tracking-[1.2px] leading-[16px] flex items-center shrink-0">
                     ⌘+T
@@ -235,7 +235,7 @@ const DropdownMenu1: FunctionComponent<DropdownMenu1Type> = ({
                 Log out
               </div>
             </div>
-            <div className="h-4 w-[125px] flex flex-col items-end justify-start py-0 pl-[93px] pr-0 box-border min-w-[31.75px] text-[10.5px] text-secondary-foreground">
+            <div className="h-4 w-[125px] flex flex-col items-end justify-start py-0 pl-[93px] pr-0 box-border min-w-[31.75px] text-[10.5px] text-primary">
               <div className="w-8 h-4 flex flex-col items-start justify-start opacity-[0.6]">
                 <div className="w-[33px] h-4 relative tracking-[1.2px] leading-[16px] flex items-center shrink-0">
                   ⇧⌘Q

@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 import { Box } from "@mui/material";
-import FrameComponent1 from "./FrameComponent1";
+import FrameComponent1 from "./FrameComponent11";
 import Table1 from "./Table1";
 
 export type TableType = {

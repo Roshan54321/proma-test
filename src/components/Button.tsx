@@ -1,6 +1,5 @@
 import { FunctionComponent, useCallback } from "react";
 import { Typography, Box } from "@mui/material";
-import Button1 from "./Button1";
 
 export type ButtonType = {
   className?: string;
@@ -93,7 +92,7 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
         </div>
         <div className="self-stretch h-px relative border-border border-t-[1px] border-solid box-border" />
       </header>
-      <section className="self-stretch flex flex-row items-start justify-center max-w-full text-[transparent]">
+      <section className="self-stretch flex flex-row items-start justify-center max-w-full text-center text-sm text-primary-foreground font-inter">
         <div
           className="self-stretch w-[366px] flex flex-col items-start justify-start gap-5 max-w-full"
           data-acc-group
@@ -106,22 +105,22 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
             onClick={onAccordionHeaderClick}
           >
             <div className="h-[42px] w-[77px] flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
-              <Button1 size="default" variant="default" />
+              <div className="w-[77px] rounded-md bg-primary h-10 flex flex-row items-center justify-center pt-[9.5px] px-4 pb-[10.5px] box-border">
+                <div className="relative leading-[20px] font-medium">
+                  Button
+                </div>
+              </div>
             </div>
             <div className="h-10 w-[69px] flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border">
-              <Button1
-                size="sm"
-                variant="default"
-                buttonWidth="69px"
-                buttonHeight="36px"
-              />
+              <div className="w-[69px] rounded-md bg-primary h-9 flex flex-row items-center justify-center pt-[7.5px] px-3 pb-[8.5px] box-border">
+                <div className="relative leading-[20px] font-medium">
+                  Button
+                </div>
+              </div>
             </div>
-            <Button1
-              size="lg"
-              variant="default"
-              buttonWidth="111px"
-              buttonHeight="44px"
-            />
+            <div className="w-[111px] rounded-md bg-primary h-11 flex flex-row items-center justify-center pt-[11.5px] px-8 pb-[12.5px] box-border">
+              <div className="relative leading-[20px] font-medium">Button</div>
+            </div>
             <div className="h-[42px] w-10 flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
               <div className="w-10 rounded-md bg-primary h-10 flex flex-row items-center justify-center p-3 box-border">
                 <img
@@ -144,27 +143,24 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
               onClick={onAccordionHeaderClick}
             >
               <div className="h-[42px] w-[77px] flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
-                <Button1
-                  size="default"
-                  variant="default"
-                  buttonWidth="77px"
-                  buttonHeight="40px"
-                />
+                <div className="w-[77px] rounded-md bg-primary h-10 flex flex-row items-center justify-center pt-[9.5px] px-4 pb-[10.5px] box-border">
+                  <div className="relative leading-[20px] font-medium">
+                    Button
+                  </div>
+                </div>
               </div>
               <div className="h-10 w-[69px] flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border">
-                <Button1
-                  size="sm"
-                  variant="default"
-                  buttonWidth="69px"
-                  buttonHeight="36px"
-                />
+                <div className="w-[69px] rounded-md bg-primary h-9 flex flex-row items-center justify-center pt-[7.5px] px-3 pb-[8.5px] box-border">
+                  <div className="relative leading-[20px] font-medium">
+                    Button
+                  </div>
+                </div>
               </div>
-              <Button1
-                size="lg"
-                variant="default"
-                buttonWidth="111px"
-                buttonHeight="44px"
-              />
+              <div className="w-[111px] rounded-md bg-primary h-11 flex flex-row items-center justify-center pt-[11.5px] px-8 pb-[12.5px] box-border">
+                <div className="relative leading-[20px] font-medium">
+                  Button
+                </div>
+              </div>
               <div className="h-[42px] w-10 flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
                 <div className="w-10 rounded-md bg-primary h-10 flex flex-row items-center justify-center p-3 box-border">
                   <img
@@ -175,7 +171,7 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
                   />
                 </div>
               </div>
-              <div className="relative hidden" />
+              <div className="relative text-[transparent] hidden" />
             </div>
             <div
               className="w-[357px] grid flex-row items-start justify-start gap-5 cursor-default grid-rows-[0fr] [transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] accordion__open:grid-rows-[1fr] accordion__close:grid-rows-[0fr]"
@@ -196,27 +192,22 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
             onClick={onAccordionHeaderClick}
           >
             <div className="h-[42px] w-[77px] flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
-              <Button1
-                size="default"
-                variant="destructive"
-                buttonWidth="77px"
-                buttonHeight="40px"
-              />
+              <div className="w-[77px] rounded-md bg-destructive h-10 flex flex-row items-center justify-center pt-[9.5px] px-4 pb-[10.5px] box-border">
+                <div className="relative leading-[20px] font-medium">
+                  Button
+                </div>
+              </div>
             </div>
             <div className="h-10 w-[69px] flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border">
-              <Button1
-                size="sm"
-                variant="destructive"
-                buttonWidth="69px"
-                buttonHeight="36px"
-              />
+              <div className="w-[69px] rounded-md bg-destructive h-9 flex flex-row items-center justify-center pt-[7.5px] px-3 pb-[8.5px] box-border">
+                <div className="relative leading-[20px] font-medium">
+                  Button
+                </div>
+              </div>
             </div>
-            <Button1
-              size="lg"
-              variant="destructive"
-              buttonWidth="111px"
-              buttonHeight="44px"
-            />
+            <div className="w-[111px] rounded-md bg-destructive h-11 flex flex-row items-center justify-center pt-[11.5px] px-8 pb-[12.5px] box-border">
+              <div className="relative leading-[20px] font-medium">Button</div>
+            </div>
             <div className="h-[42px] w-10 flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
               <div className="w-10 rounded-md bg-destructive h-10 flex flex-row items-center justify-center p-3 box-border">
                 <img
@@ -239,27 +230,24 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
               onClick={onAccordionHeaderClick}
             >
               <div className="h-[42px] w-[77px] flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
-                <Button1
-                  size="default"
-                  variant="default"
-                  buttonWidth="77px"
-                  buttonHeight="40px"
-                />
+                <div className="w-[77px] rounded-md bg-primary h-10 flex flex-row items-center justify-center pt-[9.5px] px-4 pb-[10.5px] box-border">
+                  <div className="relative leading-[20px] font-medium">
+                    Button
+                  </div>
+                </div>
               </div>
               <div className="h-10 w-[69px] flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border">
-                <Button1
-                  size="sm"
-                  variant="default"
-                  buttonWidth="69px"
-                  buttonHeight="36px"
-                />
+                <div className="w-[69px] rounded-md bg-primary h-9 flex flex-row items-center justify-center pt-[7.5px] px-3 pb-[8.5px] box-border">
+                  <div className="relative leading-[20px] font-medium">
+                    Button
+                  </div>
+                </div>
               </div>
-              <Button1
-                size="lg"
-                variant="default"
-                buttonWidth="111px"
-                buttonHeight="44px"
-              />
+              <div className="w-[111px] rounded-md bg-primary h-11 flex flex-row items-center justify-center pt-[11.5px] px-8 pb-[12.5px] box-border">
+                <div className="relative leading-[20px] font-medium">
+                  Button
+                </div>
+              </div>
               <div className="h-[42px] w-10 flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
                 <div className="w-10 rounded-md bg-primary h-10 flex flex-row items-center justify-center p-3 box-border">
                   <img
@@ -270,7 +258,7 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
                   />
                 </div>
               </div>
-              <div className="relative hidden" />
+              <div className="relative text-[transparent] hidden" />
             </div>
             <div
               className="w-[357px] grid flex-row items-start justify-start gap-5 cursor-default grid-rows-[0fr] [transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] accordion__open:grid-rows-[1fr] accordion__close:grid-rows-[0fr]"
@@ -284,34 +272,29 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
             </div>
           </div>
           <div
-            className="w-[357px] h-11 flex flex-row items-start justify-start gap-5 [transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] cursor-pointer"
+            className="w-[357px] h-11 flex flex-row items-start justify-start gap-5 [transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] cursor-pointer text-foreground"
             data-acc-item
             data-acc-header
             data-acc-original
             onClick={onAccordionHeaderClick}
           >
             <div className="h-[42px] w-[77px] flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
-              <Button1
-                size="default"
-                variant="ghost"
-                buttonWidth="77px"
-                buttonHeight="40px"
-              />
+              <div className="w-[77px] rounded-md h-10 flex flex-row items-center justify-center pt-[9.5px] px-4 pb-[10.5px] box-border">
+                <div className="relative leading-[20px] font-medium">
+                  Button
+                </div>
+              </div>
             </div>
             <div className="h-10 w-[69px] flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border">
-              <Button1
-                size="sm"
-                variant="ghost"
-                buttonWidth="69px"
-                buttonHeight="36px"
-              />
+              <div className="w-[69px] rounded-md h-9 flex flex-row items-center justify-center pt-[7.5px] px-3 pb-[8.5px] box-border">
+                <div className="relative leading-[20px] font-medium">
+                  Button
+                </div>
+              </div>
             </div>
-            <Button1
-              size="lg"
-              variant="ghost"
-              buttonWidth="111px"
-              buttonHeight="44px"
-            />
+            <div className="w-[111px] rounded-md h-11 flex flex-row items-center justify-center pt-[11.5px] px-8 pb-[12.5px] box-border">
+              <div className="relative leading-[20px] font-medium">Button</div>
+            </div>
             <div className="h-[42px] w-10 flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
               <div className="w-10 rounded-md h-10 flex flex-row items-center justify-center p-3 box-border">
                 <img
@@ -334,27 +317,24 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
               onClick={onAccordionHeaderClick}
             >
               <div className="h-[42px] w-[77px] flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
-                <Button1
-                  size="default"
-                  variant="default"
-                  buttonWidth="77px"
-                  buttonHeight="40px"
-                />
+                <div className="w-[77px] rounded-md bg-primary h-10 flex flex-row items-center justify-center pt-[9.5px] px-4 pb-[10.5px] box-border">
+                  <div className="relative leading-[20px] font-medium">
+                    Button
+                  </div>
+                </div>
               </div>
               <div className="h-10 w-[69px] flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border">
-                <Button1
-                  size="sm"
-                  variant="default"
-                  buttonWidth="69px"
-                  buttonHeight="36px"
-                />
+                <div className="w-[69px] rounded-md bg-primary h-9 flex flex-row items-center justify-center pt-[7.5px] px-3 pb-[8.5px] box-border">
+                  <div className="relative leading-[20px] font-medium">
+                    Button
+                  </div>
+                </div>
               </div>
-              <Button1
-                size="lg"
-                variant="default"
-                buttonWidth="111px"
-                buttonHeight="44px"
-              />
+              <div className="w-[111px] rounded-md bg-primary h-11 flex flex-row items-center justify-center pt-[11.5px] px-8 pb-[12.5px] box-border">
+                <div className="relative leading-[20px] font-medium">
+                  Button
+                </div>
+              </div>
               <div className="h-[42px] w-10 flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
                 <div className="w-10 rounded-md bg-primary h-10 flex flex-row items-center justify-center p-3 box-border">
                   <img
@@ -365,7 +345,7 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
                   />
                 </div>
               </div>
-              <div className="relative hidden" />
+              <div className="relative text-[transparent] hidden" />
             </div>
             <div
               className="w-[357px] grid flex-row items-start justify-start gap-5 cursor-default grid-rows-[0fr] [transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] accordion__open:grid-rows-[1fr] accordion__close:grid-rows-[0fr]"
@@ -379,34 +359,29 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
             </div>
           </div>
           <div
-            className="w-[357px] h-11 flex flex-row items-start justify-start gap-5 [transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] cursor-pointer"
+            className="w-[357px] h-11 flex flex-row items-start justify-start gap-5 [transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] cursor-pointer text-foreground"
             data-acc-item
             data-acc-header
             data-acc-original
             onClick={onAccordionHeaderClick}
           >
             <div className="h-[42px] w-[77px] flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
-              <Button1
-                size="default"
-                variant="link"
-                buttonWidth="77px"
-                buttonHeight="40px"
-              />
+              <div className="w-[77px] rounded-md h-10 flex flex-row items-center justify-center pt-[9.5px] px-4 pb-[10.5px] box-border">
+                <div className="relative leading-[20px] font-medium">
+                  Button
+                </div>
+              </div>
             </div>
             <div className="h-10 w-[69px] flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border">
-              <Button1
-                size="sm"
-                variant="link"
-                buttonWidth="69px"
-                buttonHeight="36px"
-              />
+              <div className="w-[69px] rounded-md h-9 flex flex-row items-center justify-center pt-[7.5px] px-3 pb-[8.5px] box-border">
+                <div className="relative leading-[20px] font-medium">
+                  Button
+                </div>
+              </div>
             </div>
-            <Button1
-              size="lg"
-              variant="link"
-              buttonWidth="111px"
-              buttonHeight="44px"
-            />
+            <div className="w-[111px] rounded-md h-11 flex flex-row items-center justify-center pt-[11.5px] px-8 pb-[12.5px] box-border">
+              <div className="relative leading-[20px] font-medium">Button</div>
+            </div>
             <div className="h-[42px] w-10 flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
               <div className="w-10 rounded-md h-10 flex flex-row items-center justify-center p-3 box-border">
                 <img
@@ -429,27 +404,24 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
               onClick={onAccordionHeaderClick}
             >
               <div className="h-[42px] w-[77px] flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
-                <Button1
-                  size="default"
-                  variant="default"
-                  buttonWidth="77px"
-                  buttonHeight="40px"
-                />
+                <div className="w-[77px] rounded-md bg-primary h-10 flex flex-row items-center justify-center pt-[9.5px] px-4 pb-[10.5px] box-border">
+                  <div className="relative leading-[20px] font-medium">
+                    Button
+                  </div>
+                </div>
               </div>
               <div className="h-10 w-[69px] flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border">
-                <Button1
-                  size="sm"
-                  variant="default"
-                  buttonWidth="69px"
-                  buttonHeight="36px"
-                />
+                <div className="w-[69px] rounded-md bg-primary h-9 flex flex-row items-center justify-center pt-[7.5px] px-3 pb-[8.5px] box-border">
+                  <div className="relative leading-[20px] font-medium">
+                    Button
+                  </div>
+                </div>
               </div>
-              <Button1
-                size="lg"
-                variant="default"
-                buttonWidth="111px"
-                buttonHeight="44px"
-              />
+              <div className="w-[111px] rounded-md bg-primary h-11 flex flex-row items-center justify-center pt-[11.5px] px-8 pb-[12.5px] box-border">
+                <div className="relative leading-[20px] font-medium">
+                  Button
+                </div>
+              </div>
               <div className="h-[42px] w-10 flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
                 <div className="w-10 rounded-md bg-primary h-10 flex flex-row items-center justify-center p-3 box-border">
                   <img
@@ -460,7 +432,7 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
                   />
                 </div>
               </div>
-              <div className="relative hidden" />
+              <div className="relative text-[transparent] hidden" />
             </div>
             <div
               className="w-[357px] grid flex-row items-start justify-start gap-5 cursor-default grid-rows-[0fr] [transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] accordion__open:grid-rows-[1fr] accordion__close:grid-rows-[0fr]"
@@ -474,34 +446,29 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
             </div>
           </div>
           <div
-            className="w-[361px] h-11 flex flex-row items-start justify-start gap-5 [transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] cursor-pointer"
+            className="w-[361px] h-11 flex flex-row items-start justify-start gap-5 [transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] cursor-pointer text-foreground"
             data-acc-item
             data-acc-header
             data-acc-original
             onClick={onAccordionHeaderClick}
           >
             <div className="h-[42px] w-[79px] flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
-              <Button1
-                size="default"
-                variant="outline"
-                buttonWidth="79px"
-                buttonHeight="40px"
-              />
+              <div className="w-[79px] rounded-md border-border border-[1px] border-solid box-border h-10 flex flex-row items-center justify-center pt-[9.5px] px-[17px] pb-[10.5px]">
+                <div className="relative leading-[20px] font-medium">
+                  Button
+                </div>
+              </div>
             </div>
             <div className="h-10 w-[71px] flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border">
-              <Button1
-                size="sm"
-                variant="outline"
-                buttonWidth="71px"
-                buttonHeight="36px"
-              />
+              <div className="w-[71px] rounded-md border-border border-[1px] border-solid box-border h-9 flex flex-row items-center justify-center pt-[7.5px] px-[13px] pb-[8.5px]">
+                <div className="relative leading-[20px] font-medium">
+                  Button
+                </div>
+              </div>
             </div>
-            <Button1
-              size="lg"
-              variant="outline"
-              buttonWidth="111px"
-              buttonHeight="44px"
-            />
+            <div className="w-[111px] rounded-md border-border border-[1px] border-solid box-border h-11 flex flex-row items-center justify-center pt-[11.5px] px-[33px] pb-[12.5px]">
+              <div className="relative leading-[20px] font-medium">Button</div>
+            </div>
             <div className="h-[42px] w-10 flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
               <div className="w-10 rounded-md border-border border-[1px] border-solid box-border h-10 flex flex-row items-center justify-center p-3">
                 <img
@@ -524,27 +491,24 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
               onClick={onAccordionHeaderClick}
             >
               <div className="h-[42px] w-[77px] flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
-                <Button1
-                  size="default"
-                  variant="default"
-                  buttonWidth="77px"
-                  buttonHeight="40px"
-                />
+                <div className="w-[77px] rounded-md bg-primary h-10 flex flex-row items-center justify-center pt-[9.5px] px-4 pb-[10.5px] box-border">
+                  <div className="relative leading-[20px] font-medium">
+                    Button
+                  </div>
+                </div>
               </div>
               <div className="h-10 w-[69px] flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border">
-                <Button1
-                  size="sm"
-                  variant="default"
-                  buttonWidth="69px"
-                  buttonHeight="36px"
-                />
+                <div className="w-[69px] rounded-md bg-primary h-9 flex flex-row items-center justify-center pt-[7.5px] px-3 pb-[8.5px] box-border">
+                  <div className="relative leading-[20px] font-medium">
+                    Button
+                  </div>
+                </div>
               </div>
-              <Button1
-                size="lg"
-                variant="default"
-                buttonWidth="111px"
-                buttonHeight="44px"
-              />
+              <div className="w-[111px] rounded-md bg-primary h-11 flex flex-row items-center justify-center pt-[11.5px] px-8 pb-[12.5px] box-border">
+                <div className="relative leading-[20px] font-medium">
+                  Button
+                </div>
+              </div>
               <div className="h-[42px] w-10 flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
                 <div className="w-10 rounded-md bg-primary h-10 flex flex-row items-center justify-center p-3 box-border">
                   <img
@@ -555,7 +519,7 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
                   />
                 </div>
               </div>
-              <div className="relative hidden" />
+              <div className="relative text-[transparent] hidden" />
             </div>
             <div
               className="w-[357px] grid flex-row items-start justify-start gap-5 cursor-default grid-rows-[0fr] [transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] accordion__open:grid-rows-[1fr] accordion__close:grid-rows-[0fr]"
@@ -569,34 +533,29 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
             </div>
           </div>
           <div
-            className="w-[357px] h-11 flex flex-row items-start justify-start gap-5 [transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] cursor-pointer"
+            className="w-[357px] h-11 flex flex-row items-start justify-start gap-5 [transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] cursor-pointer text-foreground"
             data-acc-item
             data-acc-header
             data-acc-original
             onClick={onAccordionHeaderClick}
           >
             <div className="h-[42px] w-[77px] flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
-              <Button1
-                size="default"
-                variant="secondary"
-                buttonWidth="77px"
-                buttonHeight="40px"
-              />
+              <div className="w-[77px] rounded-md bg-muted h-10 flex flex-row items-center justify-center pt-[9.5px] px-4 pb-[10.5px] box-border">
+                <div className="relative leading-[20px] font-medium">
+                  Button
+                </div>
+              </div>
             </div>
             <div className="h-10 w-[69px] flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border">
-              <Button1
-                size="sm"
-                variant="secondary"
-                buttonWidth="69px"
-                buttonHeight="36px"
-              />
+              <div className="w-[69px] rounded-md bg-muted h-9 flex flex-row items-center justify-center pt-[7.5px] px-3 pb-[8.5px] box-border">
+                <div className="relative leading-[20px] font-medium">
+                  Button
+                </div>
+              </div>
             </div>
-            <Button1
-              size="lg"
-              variant="secondary"
-              buttonWidth="111px"
-              buttonHeight="44px"
-            />
+            <div className="w-[111px] rounded-md bg-muted h-11 flex flex-row items-center justify-center pt-[11.5px] px-8 pb-[12.5px] box-border">
+              <div className="relative leading-[20px] font-medium">Button</div>
+            </div>
             <div className="h-[42px] w-10 flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
               <div className="w-10 rounded-md bg-muted h-10 flex flex-row items-center justify-center p-3 box-border">
                 <img
@@ -619,27 +578,24 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
               onClick={onAccordionHeaderClick}
             >
               <div className="h-[42px] w-[77px] flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
-                <Button1
-                  size="default"
-                  variant="default"
-                  buttonWidth="77px"
-                  buttonHeight="40px"
-                />
+                <div className="w-[77px] rounded-md bg-primary h-10 flex flex-row items-center justify-center pt-[9.5px] px-4 pb-[10.5px] box-border">
+                  <div className="relative leading-[20px] font-medium">
+                    Button
+                  </div>
+                </div>
               </div>
               <div className="h-10 w-[69px] flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border">
-                <Button1
-                  size="sm"
-                  variant="default"
-                  buttonWidth="69px"
-                  buttonHeight="36px"
-                />
+                <div className="w-[69px] rounded-md bg-primary h-9 flex flex-row items-center justify-center pt-[7.5px] px-3 pb-[8.5px] box-border">
+                  <div className="relative leading-[20px] font-medium">
+                    Button
+                  </div>
+                </div>
               </div>
-              <Button1
-                size="lg"
-                variant="default"
-                buttonWidth="111px"
-                buttonHeight="44px"
-              />
+              <div className="w-[111px] rounded-md bg-primary h-11 flex flex-row items-center justify-center pt-[11.5px] px-8 pb-[12.5px] box-border">
+                <div className="relative leading-[20px] font-medium">
+                  Button
+                </div>
+              </div>
               <div className="h-[42px] w-10 flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
                 <div className="w-10 rounded-md bg-primary h-10 flex flex-row items-center justify-center p-3 box-border">
                   <img
@@ -650,7 +606,7 @@ const Button: FunctionComponent<ButtonType> = ({ className = "" }) => {
                   />
                 </div>
               </div>
-              <div className="relative hidden" />
+              <div className="relative text-[transparent] hidden" />
             </div>
             <div
               className="w-[357px] grid flex-row items-start justify-start gap-5 cursor-default grid-rows-[0fr] [transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] accordion__open:grid-rows-[1fr] accordion__close:grid-rows-[0fr]"
